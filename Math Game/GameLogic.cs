@@ -1,4 +1,5 @@
-﻿namespace Math_Game
+﻿using Math_Game.Models;
+namespace Math_Game
 {
 	internal class GameLogic
 	{
@@ -22,6 +23,8 @@
                 Console.WriteLine($"{firstNumber} + {secondNumber}");
                 var result = Console.ReadLine();
 
+                result = Helpers.ValidateResult(result);
+
                 if (int.Parse(result) == firstNumber + secondNumber)
                 {
                     Console.WriteLine("Correct, good job! Type any key for next question.");
@@ -37,7 +40,7 @@
             Console.WriteLine($"Game over! Your final score is {score}. Press ant key to go back to Main Menu.");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Addition");
+            Helpers.AddToHistory(score, GameType.Addition);
         }
 
         internal void SubtractionGame(string message)
@@ -59,6 +62,8 @@
                 Console.WriteLine($"{firstNumber} - {secondNumber}");
                 var result = Console.ReadLine();
 
+                result = Helpers.ValidateResult(result);
+
                 if (int.Parse(result) == firstNumber - secondNumber)
                 {
                     Console.WriteLine("Correct, good job! Type any key for next question.");
@@ -74,7 +79,7 @@
             Console.WriteLine($"Game over! Your final score is {score}. Press ant key to go back to Main Menu.");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Subtraction");
+            Helpers.AddToHistory(score, GameType.Subtraction);
         }
 
         internal void DivisonGame(string message)
@@ -93,6 +98,8 @@
                 Console.WriteLine($"{firstNumber} / {secondNumber}");
                 var result = Console.ReadLine();
 
+                result = Helpers.ValidateResult(result);
+
                 if (int.Parse(result) == firstNumber / secondNumber)
                 {
                     Console.WriteLine("Correct, good job! Type any key for next question.");
@@ -108,7 +115,7 @@
             Console.WriteLine($"Game over! Your final score is {score}. Press ant key to go back to Main Menu.");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Division");
+            Helpers.AddToHistory(score, GameType.Division);
         }
 
         internal void MultiplicationGame(string message)
@@ -130,6 +137,8 @@
                 Console.WriteLine($"{firstNumber} * {secondNumber}");
                 var result = Console.ReadLine();
 
+                result = Helpers.ValidateResult(result);
+
                 if (int.Parse(result) == firstNumber * secondNumber)
                 {
                     Console.WriteLine("Correct, good job! Type any key for next question.");
@@ -145,7 +154,7 @@
             Console.WriteLine($"Game over! Your final score is {score}. Press ant key to go back to Main Menu.");
             Console.ReadLine();
 
-            Helpers.AddToHistory(score, "Multiplication");
+            Helpers.AddToHistory(score, GameType.Multiplication);
         }
 
     }

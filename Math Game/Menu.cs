@@ -6,8 +6,11 @@
 
         internal void ShowMenu(string name, DateTime date)
         {
+            Console.Clear();
             Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("Hello " + name + ". It's " + date + ". This is your math game. That's great that you are working on improve your math skills!");
+            Console.WriteLine("Hello " + name + ". It's " + date + ". This is your math game. That's great that you are testing your math skills!");
+            Console.WriteLine("Press any key to show menu");
+            Console.ReadLine();
             Console.WriteLine("\n");
 
             bool isGameOn = true;
@@ -29,7 +32,7 @@ Q - Quit the program");
                 switch (gameSelected.Trim().ToLower())
                 {
                     case "v":
-                        Helpers.GetGames();
+                        Helpers.PrintGames();
                         break;
                     case "a":
                         gameLogic.AdditionGame("Addition game");
